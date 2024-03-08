@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+    <link rel="icon" href="imgs/crud-operations.webp">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-lg mx-auto">
+        <div class="row">
+            <div class="system w-75 bg-light p-sm-3 p-md-5 mx-auto mt-4 shadow ">
+                <h1>Product Management System</h1>
+                <div class="mb-3">
+                    <label for="productName" class="form-label" id="nameLabel">Product Name</label>
+                    <input type="text" name="productName" id="productName" class="form-control shadow-none"
+                        oninput="validateName()">
+                    <small id="nameError" class="text-danger d-none">name must start with a capital letter, min 4
+                        characters and max 8 characters</small>
+                </div>
+                <div class="mb-3">
+                    <label for="productPrice" class="form-label" id="priceLabel">Product Price</label>
+                    <input type="number" name="productPrice" id="productPrice" class="form-control shadow-none"
+                        oninput="validatePrice()">
+                    <small id="priceError" class="text-danger d-none"> min price is 1000 and max price is 100000</small>
+                </div>
+                <div class="mb-3">
+                    <label for="productCat" class="form-label" id="catLabel">Product Category</label>
+                    <input type="text" name="productCat" id="productCat" class="form-control shadow-none"
+                        oninput="validateCat()">
+                    <small id="catError" class="text-danger d-none">choose from (tv,mobile,laptop and tablet)</small>
+                </div>
+                <div class="mb-3">
+                    <label for="productDesc" class="form-label" id="descLabel">Product Description</label>
+                    <textarea name="productDesc" id="productDesc" cols="30" rows="3" class="form-control shadow-none"
+                        oninput="validateDesc()"></textarea>
+                    <small id="descError" class="text-danger d-none">at least 3 characters and max 15 characters</small>
+                </div>
+                <button class="btn btn-success" id="addBtn" onclick="createProduct()">Add product</button>
+                <button class="btn btn-warning d-none" id="updateBtn" onclick="updateProduct()">Update product</button>
+            </div>
+            <div class="w-75 mx-auto mt-4">
+                <h4>Search</h4>
+                <input type="text" id="searchProduct" class="form-control shadow-none"
+                    oninput="searchProduct(this.value)">
+            </div>
+            <div class="tableContainer">
+                <table class="table table-hover mx-auto mt-3 text-center align-baseline bg-danger">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

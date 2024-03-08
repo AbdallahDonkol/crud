@@ -1,0 +1,22 @@
+@media screen and (max-width: 410px) {
+  .container-lg h1 {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .container-lg .system {
+    padding-top: 0.9375rem;
+    padding-bottom: 0.9375rem;
+  }
+}
+.tableContainer {
+    overflow-x: auto;
+    margin: 20px auto;
+    width: 90%;
+  }
+  
+  .tableContainer table {
+    table-layout: fixed;
+    min-width: 600px;
+  }
+  
